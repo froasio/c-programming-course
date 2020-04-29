@@ -14,7 +14,7 @@
 ## Clase 2
 - Ejercicios Guia 1
 - Piping y redirección de flujo
-- Continuación diagramas de flujo
+- Continuación diagramas de flujo (>, >>, |, tee)
 - Break, Continue y size_t
 - Representación interna de los datos (Capítulo 2 - K&R)
 
