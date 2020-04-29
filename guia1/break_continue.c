@@ -10,6 +10,8 @@ int main(void) {
 		}
 		printf("%lu\n", i);
 	}
+  
+  puts("-----------");
 
 	for (i = 0; i < 10; i++) {
 		if (i == 4) {
@@ -17,6 +19,8 @@ int main(void) {
 		}
 		printf("%lu\n", i);
 	}
+
+  puts("-----------");
 
 	i = 0;
 	while (i < 10) {
@@ -27,6 +31,8 @@ int main(void) {
 		}
 	}
 
+  puts("-----------");
+
 	i = 0;
 	while (i < 10) {
 		printf("%lu\n", i);
@@ -35,7 +41,7 @@ int main(void) {
 	    	continue;
 		}
 	}
-
+  
 	return 0;
 }
 
