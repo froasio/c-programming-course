@@ -13,10 +13,14 @@
 
 ## Clase 2
 - Ejercicios Guia 1
-- Piping y redirección de flujo
-- Continuación diagramas de flujo (>, >>, |, tee)
+- Piping y redirección de flujo (>, >>, |, tee)
+- Continuación diagramas de flujo 
 - Break, Continue y size_t
 - Representación interna de los datos (Capítulo 2 - K&R)
 
 ## Clase 3
-- Caracteres ASCII, caracteres extendidos, configuración de los editores y la plataforma para trabajar con caracteres extendidos, tildes, "ñ", etc.
+- Caracteres ASCII
+- Tipos de datos flotantes
+- Tipos enumerativos (guia 2)
+- Arreglos y cadenas de caracteres (guia 3)
+- Ejercicios guia 1

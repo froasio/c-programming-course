@@ -1,17 +1,42 @@
+/*
+Escribir un programa que invierta los dígitos de un número positivo entero (sugerencia: usar operadores módulo, %, y división, /, para obtener los dígitos de a uno por vez). 
+
+  Ej:
+    11234 => 43211
+
+*/
+
+
 #include <stdio.h>
+#define MSG_USR "Ingrese un número entero positivo:"
+#define ERROR_MSG "ERROR"
+#define ERROR_NOT_POSITIVE_NUMBER "número no positivo"
+#define ERROR_NOT_A_NUMBER "no se pudo interpretar un número entero"
 
 int main(void) {
 
-	size_t x = 299;
-	size_t y = 0;
+  int n;
+  int x;
 
-	while(x != 0) {
+  puts(MSG_USR);
 
-		y = x % 10 + y * 10;
-		x /= 10;
+  if(!scanf("%d", &n)) {
+    fprintf(stderr, "%s : %s \n", ERROR_MSG, ERROR_NOT_A_NUMBER);
+    return 1;
+  }
+  
+  if(n < 1) {
+    fprintf(stderr, "%s : %s \n", ERROR_MSG, ERROR_NOT_POSITIVE_NUMBER);
+    return 1;
+  } 
 
-	}
+  x = 0;
+  while(n) {
+    x = x * 10 + n % 10;
+    n = n / 10;
+  }
 
-	printf("%lu\n", y);
+  printf("%d \n", x);
+  
 	return 0;
 }

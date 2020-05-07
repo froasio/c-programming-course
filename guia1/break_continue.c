@@ -8,8 +8,9 @@ int main(void) {
 		if (i == 4) {
 			break;
 		}
-		printf("%lu\n", i);
+		printf("%lu \n", i);
 	}
+  
   
   puts("-----------");
 
@@ -20,26 +21,28 @@ int main(void) {
 		printf("%lu\n", i);
 	}
 
+  
   puts("-----------");
 
 	i = 0;
 	while (i < 10) {
-		printf("%lu\n", i);
-		i++;
 		if (i == 4) {
 	    	break;
 		}
+    printf("%lu \n", i);
+		i++;
 	}
 
   puts("-----------");
 
 	i = 0;
 	while (i < 10) {
-		printf("%lu\n", i);
-		i++;
-		if (i == 4) {
+    if (i == 4) {
+        i++;
 	    	continue;
 		}
+    printf("%lu \n", i);
+    i++;
 	}
   
 	return 0;
