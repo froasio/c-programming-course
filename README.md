@@ -1,6 +1,7 @@
 # c-programming-course
 [![Run on Repl.it](https://repl.it/badge/github/froasio/c-programming-course)](https://repl.it/github/froasio/c-programming-course)
 
+## Disclaimer: Este repositorio solamente representan las notas que usamos para explicar la resolución de ejercicios en clase que van a acompañados por explicaciones y muchas modificaciones en vivo de los programas que hacemos. Bajo ningún punto de vista representan soluciones finales o completas de los ejercicios.
 
 ## Clase 0
 - Comandos de shell de Unix: cat, ls, wc -l, rm, cp, mkdir, rmdir, mv, cd, date, pwd
