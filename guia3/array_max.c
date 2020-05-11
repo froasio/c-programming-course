@@ -6,20 +6,20 @@
 int main(void) {
 
 	size_t i;
-	int v[N] = {2,-1,22,10,21};
-	size_t i_max;
+	int v[N] = {50,-1,22,10,21};
+	size_t i_min;
 
-	i_max = 0;
+	i_min = 0;
 
 	for(i=1; i<N; i++) {
 
-		if(v[i] > v[i_max]) {
-			i_max = i;
+		if(v[i] < v[i_min]) {
+			i_min = i;
 		}
 
 	}
 
-	printf("Max: %d Pos: %lu\n", v[i_max], i_max);
-	return EXIT_SUCCESS;
+	printf("Min: %d Pos: %lu\n", v[i_min], i_min);
+	return EXIT_SUCCESS; 
 
 }

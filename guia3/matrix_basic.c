@@ -15,7 +15,7 @@ int main(void) {
 		for(col = 0; col < N; col++) {
 
 			printf("Ingrese el valor de la fila %lu columna %lu: \n", row+1, col+1);
-			scanf("%i", &valor_ingresado);
+			scanf("%i", &valor_ingresado); /*validar*/
 			matrix[row][col] = valor_ingresado;
 
 		}

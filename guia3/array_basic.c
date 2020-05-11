@@ -1,5 +1,7 @@
 #include <stdio.h>
-#define N 10
+#define N 3
+#define USER_MSG "Ingrese el numero"
+#define OUTPUT_MSG "Suma total:"
 
 int main(void) {
 
@@ -10,7 +12,7 @@ int main(void) {
 
 	for(i=0; i<N; i++) {
 
-		printf("Ingrese el numero %lu \n", i);
+		printf("%s %lu \n",USER_MSG, i);
 		scanf("%d", &(v[i])); /* Validar */
 
 	}
@@ -22,6 +24,6 @@ int main(void) {
 		printf("%d\n", v[i]);
 	}
 
-	printf("Suma total: %d\n", suma_total);
+	printf("%s %d\n", OUTPUT_MSG, suma_total);
 	return 0;
 }
