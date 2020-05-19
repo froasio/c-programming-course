@@ -1,2 +1,2 @@
 language = "c"
-run = ""
+run = "sh setup.sh"
