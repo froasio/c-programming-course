@@ -24,5 +24,17 @@
 - Arreglos y cadenas de caracteres (guia 3)
 - Ejercicios guia 1
 
+## Clase 4
+- Cadenas de caracteres (guia 3)
+- Punteros (guia 4)
+
+## Clase 5
+- Ejercicio entregable
+-- Crear cuenta en github.com
+-- Crear cuenta en repl.it con cuenta de github.com
+-- Entrar en el link y hacer el ejercicio
+- Ejercicios funciones
+- Funciones atoxx()
+
 ## Disclaimer
 *Este repositorio solamente representa las notas que usamos para explicar la resolución de ejercicios en clase que van a acompañados por explicaciones y muchas modificaciones en vivo de los programas que hacemos. Bajo ningún punto de vista representan soluciones finales o completas de los ejercicios.*

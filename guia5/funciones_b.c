@@ -1,30 +1,53 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+
 #define M 10
 
-void str_to_lwr(char s[]);
+typedef enum {
+    OK,
+    ERROR_NULL_POINTER
+} status_t;
+
+status_t str_to_lwr(char s[]);
+status_t str_to_lwr_pointers(char *s);
 
 int main(void) {
     
     char s[M] = "HOLA!";
 
-    str_to_lwr(s);
+    if(str_to_lwr(s) != OK) {
+      fprintf(stderr, "Error \n");
+      return EXIT_FAILURE;
+    }
 
     puts(s);
 
-    return 0;
+    return EXIT_SUCCESS;
 
 } 
 
-void str_to_lwr(char s[]){
-
-    size_t i, l;
+status_t str_to_lwr(char s[]){
     
-    l = strlen(s);
+    size_t i;
 
-    for(i=0; i < l; i++) {
+    if(s == NULL)
+      return ERROR_NULL_POINTER;    
+    
+    for(i=0; s[i]; i++) {
         s[i] = tolower(s[i]);
     }
-    
+    return OK;
+}
+
+status_t str_to_lwr_pointers(char *s) {
+  
+  if(s == NULL)
+      return ERROR_NULL_POINTER;
+
+  for(; *s; s++)
+    *s = tolower(*s);
+  
+  return OK;
 }

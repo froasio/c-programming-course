@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 typedef unsigned int uint;
 typedef enum {
@@ -18,9 +19,9 @@ int main(void) {
 
     convertir_segundos(segundos, &h, &m, &s);
 
-    printf("H: %d, M: %d, S: %d", h, m, s);
+    printf("H: %d, M: %d, S: %d \n", h, m, s);
 
-	return 0;
+	return EXIT_SUCCESS;
 } 
 
 status_t convertir_segundos(uint segundos_totales, 
