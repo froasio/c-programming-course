@@ -6,5 +6,5 @@ void read_data(int* a, int* b) {
 }
 
 void write_data(int a) {
-	printf("Suma: %d\n", a);
+	printf("Suma total: %d\n", a);
 }
