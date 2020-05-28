@@ -1,7 +1,6 @@
 #!/bin/bash
 
 run="false"
-file=""
 
 while test $# -gt 0; do
   case "$1" in
@@ -10,7 +9,7 @@ while test $# -gt 0; do
     shift
     ;;
   *)
-    file=$1
+    file="${1%.*}"
     shift
     ;;
   esac
