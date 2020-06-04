@@ -41,5 +41,21 @@
 - Modificadores static y extern
 - Ejercicios de operadores de bits
 
+## Clase 7
+
+ strdup()
+char * strdup(const char *);
+status_t strdup(const char *, char \*\*);
+
+ left-trim()/right_trim() con memoria dinámica
+
+ función de destrucción de una matriz dinámica:
+status_t delete_matrix (double \*\*, size_t n_rows, size_t n_cols);
+status_t delete_matrix (double \*\*\*, size_t n_rows, size_t n_cols);
+
+ función constructora de una matriz dinámica:
+double \*\* create_matrix (size_t n_rows, size_t n_cols);
+status_t create_matrix (size_t n_rows, size_t n_cols), double \*\*\*);
+
 ## Disclaimer
 *Este repositorio solamente representa las notas que usamos para explicar la resolución de ejercicios en clase que van a acompañados por explicaciones y muchas modificaciones en vivo de los programas que hacemos. Bajo ningún punto de vista representan soluciones finales o completas de los ejercicios.*
