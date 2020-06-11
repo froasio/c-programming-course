@@ -1,7 +1,7 @@
 CFLAGS=-Wall -pedantic -ansi
 CC=gcc
 
-all: make_example clear install
+all: make_example clear run
 
 make_example: main.o io.o data.o
 	$(CC) $(CFLAGS) -o make_example main.o io.o data.o
@@ -20,3 +20,6 @@ clear:
 
 install: 
 	cp make_example ../make_example_exec
+
+run:
+	./make_example
