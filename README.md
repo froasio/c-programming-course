@@ -57,6 +57,7 @@ status_t delete_matrix (double \*\*\*, size_t n_rows, size_t n_cols);
 double \*\* create_matrix (size_t n_rows, size_t n_cols);
 status_t create_matrix (size_t n_rows, size_t n_cols), double \*\*\*);
 
+
 ## Clase 8
 - Ejemplos CLA
 -- Validar argv y argc (dentro de main.c)
