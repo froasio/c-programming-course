@@ -7,3 +7,5 @@
 # Unignore all dirs
 !*/
 
+whiteboard.c
+
