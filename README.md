@@ -57,12 +57,15 @@ status_t delete_matrix (double \*\*\*, size_t n_rows, size_t n_cols);
 double \*\* create_matrix (size_t n_rows, size_t n_cols);
 status_t create_matrix (size_t n_rows, size_t n_cols), double \*\*\*);
 
-
 ## Clase 8
 - Ejemplos CLA
 -- Validar argv y argc (dentro de main.c)
 -- argv es de solo lectura
 - Clonación de estructuras anidadas y referenciadas
+
+## Clase 9
+- Ejemplos de estructuras, archivos y memoria dinámica
+- Archivos abiertos en modo "append"
 
 ## Disclaimer
 *Este repositorio solamente representa las notas que usamos para explicar la resolución de ejercicios en clase que van a acompañados por explicaciones y muchas modificaciones en vivo de los programas que hacemos. Bajo ningún punto de vista representan soluciones finales o completas de los ejercicios.*
