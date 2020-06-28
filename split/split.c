@@ -35,7 +35,7 @@ char* strdup_n(const char* s, size_t i, size_t n) {
 
 status_t split(const char* s, const char del, char*** ss, size_t *len) {
 
-	size_t i,j,l;
+	size_t i,j,l,ll;
 
 	if(s == NULL || ss == NULL || len == NULL)
 		return ERROR_NULL_POINTER;
@@ -43,14 +43,15 @@ status_t split(const char* s, const char del, char*** ss, size_t *len) {
 	for(i = 0, *len = 1; s[i]; i++)
 		if(s[i] == del)
 			(*len)++;
+	ll = i;
 
 	*ss = (char**) malloc((*len) * sizeof(char*));
 	if(*ss == NULL)
 		return ERROR_OUT_OF_MEMORY;
 
-	for(i = 0, j = 0, l = 0; s[j]; ){
+	for(i = 0, j = 0, l = 0; j <= ll; ){
 
-		if(s[j] == del) {
+		if(s[j] == del || !s[j]) {
 			(*ss)[l] = strdup_n(s, i, j-i);
 			if((*ss)[l] == NULL) {
 				delete_string_array(ss, l);
@@ -60,12 +61,6 @@ status_t split(const char* s, const char del, char*** ss, size_t *len) {
 			l++;
 		}
 		j++;
-	}
-
-	(*ss)[l] = strdup_n(s, i, j-i);
-	if((*ss)[l] == NULL) {
-		delete_string_array(ss, l);
-		return ERROR_OUT_OF_MEMORY;
 	}
 
 	return OK;
