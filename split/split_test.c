@@ -8,8 +8,8 @@ test_strdup(const MunitParameter params[], void* data) {
 
 	size_t l;
 	char *s;
-
-	s = strdup_n("aholaa", 1, 4);
+	char o[] = "aholaa";
+	s = strndup(o+1, 4);
 
   munit_assert_string_equal(s, "hola");
 

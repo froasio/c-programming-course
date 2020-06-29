@@ -8,7 +8,7 @@ typedef enum {
 } status_t;
 
 status_t delete_string_array(char*** ss, size_t l);
-char* strdup_n(const char* s, size_t i, size_t n);
+char* strndup(const char* s, size_t n);
 status_t split(const char* s, const char del, char*** ss, size_t *len);
 
 #endif
