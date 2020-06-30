@@ -45,8 +45,7 @@ status_t split(const char* s, const char del, char*** ss, size_t *len) {
 			(*len)++;
 	ll = i;
 
-	*ss = (char**) malloc((*len) * sizeof(char*));
-	if(*ss == NULL)
+	if((*ss = (char**) malloc((*len) * sizeof(char*))) == NULL)
 		return ERROR_OUT_OF_MEMORY;
 
 	for(i = 0, j = 0, l = 0; j <= ll; ){
