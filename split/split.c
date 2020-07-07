@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "split.h"
 
 status_t delete_string_array(char*** ss, size_t l) {
@@ -17,18 +18,18 @@ status_t delete_string_array(char*** ss, size_t l) {
 char* strndup(const char* s, size_t n) {
 
 	char* ss;
-	size_t k;
+	size_t l;
 	if(s == NULL)
 		return NULL;
 
-	ss = (char*) malloc((n+1)*sizeof(char));
+	for(l = 0; s[l] && l < n; l++);
+
+	ss = (char*) malloc((l+1)*sizeof(char));
 	if(ss == NULL)
 		return NULL;
 
-	for(k = 0; k < n; k++) {			
-		ss[k] = s[k];
-	}
-	ss[n] = '\0';
+	memcpy(ss, s, l);
+	ss[l] = '\0';
 
 	return ss;
 }

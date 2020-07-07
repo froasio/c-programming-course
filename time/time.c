@@ -5,7 +5,7 @@
 struct tm
 
 Miembro	Tipo	Significado
-tm_sec	int		seconds after the minute	0-61*
+tm_sec	int		seconds after the minute	0-59
 tm_min	int		minutes after the hour	0-59
 tm_hour	int		hours since midnight	0-23
 tm_mday	int		day of the month	1-31
