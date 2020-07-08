@@ -67,5 +67,14 @@ status_t create_matrix (size_t n_rows, size_t n_cols), double \*\*\*);
 - Ejemplos de estructuras, archivos y memoria dinámica
 - Archivos abiertos en modo "append"
 
+## Clase 10
+- Parcial
+
+## Clase 11
+- Time.h y TP1
+- Macros a función
+- Recursividad
+- spit() y strtok()
+
 ## Disclaimer
 *Este repositorio solamente representa las notas que usamos para explicar la resolución de ejercicios en clase que van a acompañados por explicaciones y muchas modificaciones en vivo de los programas que hacemos. Bajo ningún punto de vista representan soluciones finales o completas de los ejercicios.*
