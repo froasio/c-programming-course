@@ -20,7 +20,3 @@ done
 if [ "$run" = "true" ]; then
   ./$file
 fi
-
-
-
-
