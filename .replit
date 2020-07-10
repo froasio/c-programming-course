@@ -1,2 +1,2 @@
 language = "c"
-run = "sh misc/replit/setup.sh"
+run = "source misc/replit/setup.sh"
