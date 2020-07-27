@@ -87,43 +87,19 @@ status_t ADT_list_destroy(node_list_t **l, void(*destroy)(void **)) {
 
 ADT_list_t array_to_list(int v[], size_t l) {
 	size_t i;
-	ADT_list_t *nl;
+	ADT_list_t nl;
 	int *n;
 
-	ADT_list_new(nl);
+	ADT_list_new(&nl);
 
 	for(i = 0; i < l; i++) {
 		n = (int*)malloc(sizeof(int));
 		*n = v[i];
-		ADT_list_append(nl, n);
+		ADT_list_append(&nl, n);
 	}
-	return *nl;
+	return nl;
 }
 
-status_t print(void *i) {
-	int *ii = (int*) i;
-	printf("%d \n", (*ii));
-	return OK;
-}
-
-void destroy_int(void **i) {
-	int **ii = (int**) i;
-	free(*ii);
-	*ii = NULL;
-}
-
-int main() {
-
-	ADT_list_t l;
-	int v[] = {1,2,3,4};
-	
-	l = array_to_list(v, 4);
-	ADT_list_iterate(l, print);
-
-	return 0;
-}
-
-/*
 status_t ADT_list_reverse(ADT_list_t *l) {
 
 	node_list_t * prev = NULL;
@@ -144,7 +120,7 @@ status_t ADT_list_reverse(ADT_list_t *l) {
 
 status_t ADT_list_concat(ADT_list_t *l1, ADT_list_t l2) {
 
-	node_list_t * curr = l1;
+	node_list_t * curr = *l1;
 
 	if(curr == NULL) {
 		*l1 = l2;
@@ -159,4 +135,37 @@ status_t ADT_list_concat(ADT_list_t *l1, ADT_list_t l2) {
 	return OK;
 
 }
-*/
+
+status_t print(void *i) {
+	int *ii = (int*) i;
+	printf("%d \n", (*ii));
+	return OK;
+}
+
+void destroy_int(void **i) {
+	int **ii = (int**) i;
+	free(*ii);
+	*ii = NULL;
+}
+
+int main() {
+
+	ADT_list_t l1, l2;
+	int v1[] = {1,2,3,4};
+	int v2[] = {5,6,7,8};
+	
+	l1 = array_to_list(v1, 4);
+	l2 = array_to_list(v2, 4);
+	ADT_list_iterate(l1, print);
+	puts("----");
+	ADT_list_reverse(&l1);
+	ADT_list_iterate(l1, print);
+	puts("----");
+	ADT_list_concat(&l1, l2);
+	ADT_list_iterate(l1, print);
+
+	ADT_list_destroy(&l1, destroy_int);
+
+	return 0;
+}
+
