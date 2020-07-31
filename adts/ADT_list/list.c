@@ -19,7 +19,42 @@ typedef struct node_list {
 } node_list_t;
 
 typedef node_list_t * ADT_list_t;
+
+status_t ADT_list_new(node_list_t **l);
+bool_t ADT_list_is_empty(node_list_t *l);
+status_t ADT_list_iterate(node_list_t *l, status_t (*it)(void*));
+status_t ADT_list_new_node(node_list_t **l, void *data);
+status_t ADT_list_append(node_list_t **l, void *data);
+status_t ADT_list_destroy(node_list_t **l, void(*destroy)(void **));
+
+status_t ADT_list_reverse(ADT_list_t *l);
+status_t ADT_list_concat(ADT_list_t *l1, ADT_list_t *l2);
+
+ADT_list_t array_to_list(int v[], size_t l);
+
 void destroy_int(void **i);
+status_t print_int(void *i); 
+
+int main() {
+
+	ADT_list_t l1, l2;
+	int v1[] = {1,2,3,4};
+	int v2[] = {5,6,7,8};
+	
+	l1 = array_to_list(v1, 4);
+	l2 = array_to_list(v2, 4);
+	ADT_list_iterate(l1, print_int);
+	puts("----");
+	ADT_list_reverse(&l1);
+	ADT_list_iterate(l1, print_int);
+	puts("----");
+	ADT_list_concat(&l1, &l2);
+	ADT_list_iterate(l1, print_int);
+
+	ADT_list_destroy(&l1, destroy_int);
+
+	return 0;
+}
 
 status_t ADT_list_new(node_list_t **l){
 	*l = NULL;
@@ -115,20 +150,22 @@ status_t ADT_list_reverse(ADT_list_t *l) {
 
 		next = curr->next;
 		curr->next = prev;
+
 		prev = curr;
 		curr = next;
+
 	}
 
 	*l = prev;
 	return OK;
 }
 
-status_t ADT_list_concat(ADT_list_t *l1, ADT_list_t l2) {
+status_t ADT_list_concat(ADT_list_t *l1, ADT_list_t *l2) {
 
 	node_list_t * curr = *l1;
 
 	if(curr == NULL) {
-		*l1 = l2;
+		*l1 = *l2;
 		return OK;
 	}
 
@@ -136,12 +173,13 @@ status_t ADT_list_concat(ADT_list_t *l1, ADT_list_t l2) {
 		curr = curr->next;
 	}
 
-	curr->next = l2;
+	curr->next = *l2;
+	*l2 = NULL;
 	return OK;
 
 }
 
-status_t print(void *i) {
+status_t print_int(void *i) {
 	int *ii = (int*) i;
 	printf("%d \n", (*ii));
 	return OK;
@@ -152,25 +190,3 @@ void destroy_int(void **i) {
 	free(*ii);
 	*ii = NULL;
 }
-
-int main() {
-
-	ADT_list_t l1, l2;
-	int v1[] = {1,2,3,4};
-	int v2[] = {5,6,7,8};
-	
-	l1 = array_to_list(v1, 4);
-	l2 = array_to_list(v2, 4);
-	ADT_list_iterate(l1, print);
-	puts("----");
-	ADT_list_reverse(&l1);
-	ADT_list_iterate(l1, print);
-	puts("----");
-	ADT_list_concat(&l1, l2);
-	ADT_list_iterate(l1, print);
-
-	ADT_list_destroy(&l1, destroy_int);
-
-	return 0;
-}
-

@@ -84,5 +84,10 @@ status_t create_matrix (size_t n_rows, size_t n_cols), double \*\*\*);
 - Búsqueda
 - TDA (Matriz y otros...)
 
+## Clase 14
+- TDA Lista
+- Ejercicios memoria dinámica 
+- +Ejercicios de TDA
+
 ## Disclaimer
 *Este repositorio solamente representa las notas que usamos para explicar la resolución de ejercicios en clase que van a acompañados por explicaciones y muchas modificaciones en vivo de los programas que hacemos. Bajo ningún punto de vista representan soluciones finales o completas de los ejercicios.*
