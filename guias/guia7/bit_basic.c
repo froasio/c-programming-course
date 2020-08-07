@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #define MAX_SIZE 65
 
-typedef unsigned char type_t;
+typedef unsigned char reg_t;
 
-void print_reg(unsigned char reg) {
+void print_reg(reg_t reg) {
 
   size_t i;
   printf(" _______________________________ \n");
   putchar('|');
-  for(i = 0; i < sizeof(type_t) * 8; i++) {
+  for(i = 0; i < sizeof(reg_t) * 8; i++) {
     putchar(' ');
-    putchar(reg & (1 << (sizeof(type_t) * 8 - 1 -i)) ? '1' : '0');
+    putchar(reg & (1 << ((sizeof(reg_t) * 8) - 1 - i)) ? '1' : '0');
     putchar(' ');
     putchar('|');
   }
@@ -22,11 +22,13 @@ void print_reg(unsigned char reg) {
 
 int main (void){
 
-    type_t v = 10;
+    reg_t v1 = 0xAA;
+		reg_t v2 = 1 << 4; 
     
-    print_reg(v);
-    printf("%X\n", v);
-    printf("%o\n", v);
+		print_reg(v1);
+		print_reg(v2);
+    print_reg(v1&v2);
 
     return EXIT_SUCCESS;
+
 }

@@ -9,6 +9,11 @@ typedef struct {
 	size_t age;
 } user_t;
 
+typedef enum {
+	FORMAT_VERBOSE,
+	FORMAT_CSV
+}	format_t;
+
 void print_verbose(user_t *u);
 void print_csv(user_t *u);
 
@@ -25,14 +30,10 @@ int main(void) {
 		{3,40}	
 	};
 
-	size_t i,j;
+	size_t i;
 
-	puts("----------");
-	for(j = 0; j < MAX_PRINTERS; j++) {
-		for(i = 0; i < MAX_USERS; i++) {
-			printers[j](&(users[i]));
-		}
-		puts("----------");
+	for(i = 0; i < MAX_USERS; i++) {
+		printers[FORMAT_VERBOSE](&(users[i]));
 	}
 
 	return EXIT_SUCCESS;
