@@ -17,7 +17,7 @@ int main(void) {
     
     char s[M] = "HOLA!";
 
-    if(str_to_lwr(s) != OK) {
+    if(str_to_lwr_pointers(s) != OK) {
       fprintf(stderr, "Error \n");
       return EXIT_FAILURE;
     }
@@ -38,16 +38,17 @@ status_t str_to_lwr(char s[]){
     for(i=0; s[i]; i++) {
         s[i] = tolower(s[i]);
     }
+
     return OK;
 }
 
-status_t str_to_lwr_pointers(char *s) {
+status_t str_to_lwr_pointers(char *p) {
   
-  if(s == NULL)
+  if(p == NULL)
       return ERROR_NULL_POINTER;
 
-  for(; *s; s++)
-    *s = tolower(*s);
+  for(; (*p) != '\0'; p++)
+    *p = tolower(*p);
   
   return OK;
 }

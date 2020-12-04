@@ -4,13 +4,13 @@
 
 #define MAX_ARGS 5
 #define CMD_ARG_POS_FIRST_VALUE_TOKEN 1
-#define CMD_ARG_FIRST_VALUE_TOKEN "-t"
+#define CMD_ARG_FIRST_VALUE_TOKEN "-a"
 #define CMD_ARG_POS_SECOND_VALUE_TOKEN 3
-#define CMD_ARG_SECOND_VALUE_TOKEN "-z"
+#define CMD_ARG_SECOND_VALUE_TOKEN "-b"
 /*
     ./cla_validations -a 1 -b 2
 		./cla_validations -b 1 -a 1
-    3
+    
 */
 
 typedef enum {OK, ERROR_NULL_POINTER, ERROR_INVOCATION} status_t;
@@ -84,6 +84,8 @@ status_t validate_arg_dinamic_position(int argc, char *argv[], int *a, int *b) {
 	if(argc != MAX_ARGS) {
 			return ERROR_INVOCATION;
 	}
+
+	/* Validar que todos los parámetros sean distintos */
 
 	for(i = 1, args_to_parse = MAX_ARGS - 1; i < argc - 1; i += 2) {
 		if(!strcmp(argv[i], CMD_ARG_FIRST_VALUE_TOKEN)) {

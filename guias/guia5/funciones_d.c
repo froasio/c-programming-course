@@ -11,7 +11,7 @@ typedef enum {
 status_t string_reverse(char s[]);
 
 int main(void) {
-    char s[M] = "hola";
+    char s[M] = "mundo";
     string_reverse(s);
     puts(s);
     return 0;

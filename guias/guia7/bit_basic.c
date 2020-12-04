@@ -22,12 +22,16 @@ void print_reg(reg_t reg) {
 
 int main (void){
 
+		/*
+			000001
+			010000
+		*/
     reg_t v1 = 0xAA;
 		reg_t v2 = 1 << 4; 
     
 		print_reg(v1);
 		print_reg(v2);
-    print_reg(v1&v2);
+    print_reg(v1 ^ v2);
 
     return EXIT_SUCCESS;
 

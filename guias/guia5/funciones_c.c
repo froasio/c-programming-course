@@ -35,10 +35,10 @@ status_t cargar_arreglo_aleatorio(int v[], size_t n){
     size_t i;
     if(v == NULL)
         return ERROR_NULL_POINTER;
-
-    srand(time(NULL));
+		
+		srand(time(NULL));
     for(i = 0; i < n; i++) {
-        v[i] = rand() % 10 + 1;
+        v[i] = (rand() % 10) + 1;
     }
 
     return OK;

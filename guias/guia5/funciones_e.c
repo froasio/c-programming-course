@@ -20,7 +20,7 @@ int is_char(char c, char t) {
 
 int main(void) {
     char s[M] = "....hola....";
-    left_trim(s);
+    trim(s);
     puts(s);
     printf("L: %d \n", (int)strlen(s));
     return 0;

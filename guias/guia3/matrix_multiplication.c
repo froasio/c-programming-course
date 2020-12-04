@@ -16,7 +16,6 @@ int main(void) {
 	for(i = 0; i < N; i++) {
 		for(j = 0; j < M; j++) {
 			r[i][j] = 0;
-
 			for(k = 0 ; k < P; k++) {
 				r[i][j] += m[i][k] * n[k][j];
 			}

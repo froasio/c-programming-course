@@ -11,7 +11,6 @@ int main(void) {
 		printf("%lu \n", i);
 	}
   
-  
   puts("-----------");
 
 	for (i = 0; i < 10; i++) {
@@ -20,14 +19,13 @@ int main(void) {
 		}
 		printf("%lu\n", i);
 	}
-
-  
+ 
   puts("-----------");
 
 	i = 0;
 	while (i < 10) {
 		if (i == 4) {
-	    	break;
+	    break;
 		}
     printf("%lu \n", i);
 		i++;
@@ -38,8 +36,8 @@ int main(void) {
 	i = 0;
 	while (i < 10) {
     if (i == 4) {
-        i++;
-	    	continue;
+      i++;
+	    continue;
 		}
     printf("%lu \n", i);
     i++;
@@ -47,4 +45,3 @@ int main(void) {
   
 	return 0;
 }
-
